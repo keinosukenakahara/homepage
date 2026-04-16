@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>飲み処 貫</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    line-height: 1.7;
+    background: #fafafa;
+    color: #000;
+}
+
+/* ヘッダー */
+header {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+h1 { margin: 0; font-size: 22px; }
+
+/* セクション */
+section {
+    padding: 20px 15px;
+}
+
+/* 画像 */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 🔥 メニュー横並び（重要） */
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-item {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-item p {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* スマホは縦 */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+}
+
+/* 店舗情報 */
+.info p {
+    margin: 5px 0;
+}
+
+/* 予約ボタン */
+.reserve-btn {
+    display: inline-block;
+    padding: 16px 30px;
+    background: #e60033;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* 残席 */
+.seat-info {
+    text-align: center;
+    color: #e60033;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* 固定予約ボタン */
+.fixed-reserve {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    padding: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, #06C755, #00b900);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+/* 電話ボタン */
+.tel-btn {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    padding: 14px;
+    background: #333;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    width: 85%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>飲み処 貫</h1>
+</header>
+
+<section>
+<img src="img/header.jpg">
+</section>
+
+<section>
+<h2>店内のご案内</h2>
+<img src="img/counter.jpg">
+<p>木の温もりに包まれたカウンターで、静かなひとときを。</p>
+</section>
+
+<section class="info">
+<h2>店舗情報</h2>
+<p>神戸市兵庫区福原町13-4</p>
+<p>19:00〜24:00（日曜定休）</p>
+<p>カウンター10席</p>
+
+<iframe src="https://www.google.com/maps?q=神戸市兵庫区福原町13-4&output=embed"
+width="100%" height="250"></iframe>
+</section>
+
+<section>
+<h2>お品書き</h2>
+<div class="menu">
+<div class="menu-item"><img src="img/sashimi.jpg" id="sashimi"><p>旬の魚料理</p></div>
+<div class="menu-item"><img src="img/salad.jpg" id="salad"><p>和風サラダ</p></div>
+<div class="menu-item"><img src="img/yakitori.jpg" id="yakitori"><p>焼き鳥</p></div>
+</div>
+</section>
+
+<section>
+<h2>お飲み物</h2>
+<div class="menu">
+<div class="menu-item"><img src="img/sake.jpg" id="sake"><p>日本酒</p></div>
+<div class="menu-item"><img src="img/whisky.jpg" id="whisky"><p>ウイスキー</p></div>
+<div class="menu-item"><img src="img/beer.jpg" id="beer"><p>ビール</p></div>
+</div>
+</section>
+
+<section>
+<h2>ご予約</h2>
+
+<p class="seat-info">
+本日 残り <span id="seats">3</span>席
+</p>
+
+<div style="text-align:center;">
+<a href="https://calendar.app.google/ywxZTTPXN3LcvRpH7" target="_blank" class="reserve-btn">
+ご予約はこちら
+</a>
+
+<a href="tel:09012345678" class="tel-btn">
+📞 電話予約する
+</a>
+</div>
+
+</section>
+
+<footer style="text-align:center; padding:20px;">
+© 飲み処 貫
+</footer>
+
+<a href="https://calendar.app.google/ywxZTTPXN3LcvRpH7" target="_blank" class="fixed-reserve">
+📅 今すぐ予約
+</a>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span id="close">&times;</span>
+<h2 id="menu-title"></h2>
+<p id="menu-detail"></p>
+</div>
+</div>
+
+<script>
+document.getElementById("seats").textContent =
+Math.floor(Math.random() * 5) + 1;
+
+const modal = document.getElementById("modal");
+const title = document.getElementById("menu-title");
+const detail = document.getElementById("menu-detail");
+
+const data = {
+sashimi: {title:"刺身盛り",detail:"厳選鮮魚",price:"1280円"},
+salad: {title:"豆腐サラダ",detail:"自家製",price:"680円"},
+yakitori: {title:"焼き鳥",detail:"炭火",price:"980円"},
+sake: {title:"日本酒",detail:"地酒",price:"600円〜"},
+whisky: {title:"ウイスキー",detail:"国産中心",price:"700円〜"},
+beer: {title:"生ビール",detail:"キリン",price:"550円"}
+};
+
+document.querySelectorAll(".menu-item img").forEach(img=>{
+img.onclick=()=>{
+let d=data[img.id];
+title.textContent=d.title;
+detail.innerHTML=d.detail+"<br><strong>"+d.price+"</strong>";
+modal.style.display="block";
+};
+});
+
+document.getElementById("close").onclick=()=>modal.style.display="none";
+window.onclick=e=>{if(e.target==modal)modal.style.display="none"};
+</script>
+
+</body>
+</html>
