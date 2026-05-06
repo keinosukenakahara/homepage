@@ -3,32 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RHILL株式会社｜ITアウトソーシング・採用</title>
-<meta name="description" content="10,000台以上の実績を持つITアウトソーシング企業。キッティング・オンサイト・ネットワーク工事まで対応。エンジニア採用強化中。未経験歓迎・柔軟な働き方。">
+
+<title>株式会社R HILL FARM｜ITアウトソーシング・農業事業</title>
+
+<meta name="description" content="ITアウトソーシングと農業事業を展開。キッティング・インフラ・現地作業まで対応。エンジニア採用強化中。">
 
 <style>
-:root{--main:#0b2a5e;--accent:#3b82f6}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111}
+:root{
+  --main:#0b3d2e;
+  --accent:#c8a96a;
+}
 
-.hero{text-align:center;padding:120px 20px;background:linear-gradient(#fff,#eef2f8)}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f7f7f7;
+  color:#222;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+  background:linear-gradient(135deg,#06281d,#0b3d2e);
+  color:#fff;
+}
+
 .logo-img{
-  width:780px; /* 元260pxの約3倍 */
+  width:800px;
   max-width:95%;
 }
-.catch{margin-top:30px;font-size:30px;font-weight:700}
-.subcatch{margin-top:10px;font-size:18px;color:#555}
-.btn{display:inline-block;margin-top:25px;padding:14px 32px;border-radius:30px;background:var(--accent);color:#fff;text-decoration:none}
 
-.section{max-width:1100px;margin:80px auto;padding:0 20px}
-.features{display:flex;gap:20px;flex-wrap:wrap}
-.feature{flex:1;min-width:260px;padding:25px;border-radius:15px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.05)}
+.catch{
+  font-size:36px;
+  font-weight:700;
+  margin-top:30px;
+}
 
-ul{line-height:2}
+.subcatch{
+  margin-top:10px;
+  color:#d1d5db;
+}
 
-footer{text-align:center;padding:40px;background:#0b2a5e;color:#fff}
+/* 数字 */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
 
-@media(max-width:768px){.features{flex-direction:column}.catch{font-size:22px}}
+.stat{
+  text-align:center;
+}
+
+.stat-num{
+  font-size:32px;
+  font-weight:700;
+  color:#fff;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 34px;
+  border-radius:30px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* SECTION */
+.section{
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+.section h2{
+  border-left:5px solid var(--main);
+  padding-left:10px;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  flex:1;
+  min-width:260px;
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* VOICE */
+.voice{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* FLOW */
+.flow-step{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* CTA */
+.cta{
+  background:#06281d;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:#06281d;
+  color:#fff;
+}
+
+@media(max-width:768px){
+  .grid{flex-direction:column}
+}
+
+/* CONTACT FORM */
+.contact-form{
+  max-width:600px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+/* 高さ調整 */
+.contact-form input{
+  height:50px;
+}
+
+.contact-form textarea{
+  height:180px;
+  resize:vertical;
+}
+
+/* ボタン最下部＆中央 */
+.submit-btn{
+  margin-top:10px;
+  align-self:center;
+}
+
 </style>
 </head>
 
@@ -37,80 +184,180 @@ footer{text-align:center;padding:40px;background:#0b2a5e;color:#fff}
 <!-- HERO -->
 <section class="hero">
 <img src="img/logo.png" class="logo-img">
-<div class="catch">働くをもっと自由に</div>
-<div class="subcatch">10,000台以上の実績を持つITアウトソーシング企業</div>
-<a href="#contact" class="btn">今すぐ応募する</a>
+
+<div class="catch">技術と農業で、未来をつくる</div>
+<div class="subcatch">ITアウトソーシング × 農業のハイブリッド企業</div>
+
+<div class="stats">
+<div class="stat">
+<div class="stat-num">10,200台</div>
+<div>キッティング実績</div>
+</div>
+
+<div class="stat">
+<div class="stat-num">840台</div>
+<div>DAP取付</div>
+</div>
+
+<div class="stat">
+<div class="stat-num">全国対応</div>
+<div>エリア</div>
+</div>
+</div>
+
+<a href="#contact" class="btn">応募する</a>
 </section>
 
-<!-- TARGET -->
+<!-- 営業：サービス -->
 <section class="section">
-<h2>こんな方に向いています</h2>
+<h2>サービス内容</h2>
+<div class="grid">
+
+<div class="card">
+<h3>ITアウトソーシング</h3>
+<p>キッティング・インフラ構築・現地作業まで一括対応</p>
+</div>
+
+<div class="card">
+<h3>ネットワーク工事</h3>
+<p>構内LAN・通信設備の設計・施工</p>
+</div>
+
+<div class="card">
+<h3>農業事業</h3>
+<p>大阪府松原市20haの自社農地で高付加価値農産物を生産</p>
+</div>
+
+</div>
+</section>
+
+<!-- 信頼 -->
+<section class="section">
+<h2>取引先企業</h2>
 <ul>
-<li>自由に働きたい人（隙間時間に収入を得たい）</li>
-<li>スキルを上げたい人（未経験歓迎）</li>
-<li>現場経験を積みたい人（決して一人にしません）</li>
+<li>株式会社寺岡精工</li>
+<li>東京海上日動火災保険株式会社</li>
+<li>株式会社ダイナオール</li>
 </ul>
-<a href="#contact" class="btn">応募する</a>
 </section>
 
-<!-- FEATURES -->
+<!-- 導入事例 -->
 <section class="section">
-<div class="features">
-<div class="feature"><h3>柔軟な働き方</h3><p>案件・時間を自分で選択可能</p></div>
-<div class="feature"><h3>成長機会</h3><p>未経験からでもスキル習得</p></div>
-<div class="feature"><h3>安心サポート</h3><p>リアルタイムで本社支援</p></div>
+<h2>導入事例</h2>
+<div class="grid">
+
+<div class="card">
+<h3>東京海上日動</h3>
+<p>DAPドライブレコーダー取付</p>
 </div>
-<a href="#contact" class="btn">応募する</a>
-</section>
 
-<!-- RESULTS -->
-<section class="section">
-<h2>実績</h2>
-<div class="features">
-<div class="feature"><h3>10,200台</h3><p>キッティング実績</p></div>
-<div class="feature"><h3>840台</h3><p>DAP取付実績</p></div>
+<div class="card">
+<h3>寺岡精工</h3>
+<p>POSレジ導入</p>
+</div>
+
+<div class="card">
+<h3>通信業者</h3>
+<p>LAN工事</p>
+</div>
+
 </div>
 </section>
 
-<!-- PROFILE -->
+<!-- 採用：メリット -->
 <section class="section">
-<h2>メンバー</h2>
-<div class="features">
-<div class="feature">
+<h2>働くメリット</h2>
+<div class="grid">
+
+<div class="card">
+<h3>自由な働き方</h3>
+<p>案件・時間を自分で選べる</p>
+</div>
+
+<div class="card">
+<h3>未経験OK</h3>
+<p>現場でスキルが身につく</p>
+</div>
+
+<div class="card">
+<h3>安心サポート</h3>
+<p>リアルタイムで本社支援</p>
+</div>
+
+</div>
+</section>
+
+<!-- 1日の流れ -->
+<section class="section">
+<h2>1日の流れ（例）</h2>
+
+<div class="flow-step">① 案件確認・スケジュール調整</div>
+<div class="flow-step">② 現場訪問・作業実施</div>
+<div class="flow-step">③ 作業報告（スマホ）</div>
+<div class="flow-step">④ 終了・次案件へ</div>
+
+</section>
+
+<!-- スタッフ紹介 -->
+<section class="section">
+<h2>スタッフ紹介</h2>
+
+<div class="grid">
+
+<div class="card">
 <h3>代表</h3>
-<p>元警視庁機動隊。渡米しヘリ操縦免許取得。現業企業を経験し現職へ。</p>
+<p>
+元警視庁機動隊。渡米しヘリ操縦免許取得。航空機整備会社勤務を経て株式会社 R HILL FARMを起業。<br><br>
+現在は会社経営と並行し、建設重機・大型車両の操縦や現場作業にも従事。
+</p>
 </div>
-<div class="feature">
-<h3>総務スタッフ</h3>
-<p>元大手自動車メーカー生産技術。農業技術者を目指し転職。</p>
-</div>
-</div>
-</section>
 
-<!-- ADVISOR -->
-<section class="section">
-<h2>技術顧問</h2>
-<div class="features">
-<div class="feature">
+<div class="card">
+<h3>総務・現場技術担当</h3>
+<p>
+元大手自動車メーカー生産技術社員。<br>
+IT・農業技術者を目指しR HILL FARMへ転職。<br><br>
+社内業務から各現場の設置工事まで幅広く担当。
+</p>
+</div>
+
+<div class="card">
 <h3>技術顧問</h3>
-<p>元電機メーカー組み込み技術者。現在はミステリー作家として活動しながら、RHILLの技術者育成および社内システム構築を担当。</p>
+<p>
+元電機メーカー組み込み技術者。<br>
+現在は作家活動と並行し、技術者育成および社内システム構築を担当。
+</p>
 </div>
+
 </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<h2>応募フォーム</h2>
-<form>
-<input type="text" placeholder="お名前" required style="width:100%;padding:10px;margin-bottom:10px">
-<input type="email" placeholder="メールアドレス" required style="width:100%;padding:10px;margin-bottom:10px">
-<textarea placeholder="ご質問・自己PR" style="width:100%;padding:10px;margin-bottom:10px"></textarea>
-<button class="btn" type="submit">送信する</button>
-</form>
+<!-- 社員の声 -->
+<section class="section">
+<h2>社員の声</h2>
+
+<div class="voice">
+自由にスケジュールを組めるので働きやすい。サポートも手厚く安心。
+</div>
+
+<div class="voice">
+チーム作業で未経験でも安心。人間関係も良い。
+</div>
+
+<div class="voice">
+農業は新しい挑戦。達成感が大きい。
+</div>
+
 </section>
 
-<footer>© RHILL Inc.</footer>
+<!-- CTA -->
+<section class="cta">
+<h2>まずはお気軽にご応募ください</h2>
+<p>未経験歓迎・副業OK・柔軟な働き方</p>
+<a href="#contact" class="btn">応募する</a>
+</section>
+
+<footer>© 株式会社R HILL FARM</footer>
 
 </body>
 </html>
-
