@@ -9,45 +9,316 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-.album {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 40px;
+
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#f5f5f5;
 }
 
-.album img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: 0.3s;
+/* アルバム全体 */
+.album{
+    max-width:1200px;
+    margin:30px auto;
+    padding:10px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.album img:hover {
-    transform: scale(1.03);
+/* 画像 */
+.album img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
+
+/* PC hover */
+.album img:hover{
+    transform:scale(1.03);
+}
+
+/* タブレット */
+@media(max-width:900px){
+    .album{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* スマホ */
+@media(max-width:768px){
+    .album{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .album img{
+        height:140px;
+    }
+}
+
+/* カード化 */
+.photo-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.photo-card:hover{
+    transform:translateY(-5px);
+}
+
+/* タイトル */
+.photo-title{
+    padding:10px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* モーダル */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:80%;
+    border-radius:10px;
+}
+
+.modal-title{
+    color:#fff;
+    margin-top:15px;
+    font-size:20px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    color:#fff;
+    cursor:pointer;
+    padding:20px;
+    user-select:none;
+}
+
+.prev{left:20px;}
+.next{right:20px;}
+
+/* カテゴリボタン */
+.filter-buttons{
+    text-align:center;
+    margin:20px 0;
+}
+
+.filter-buttons button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:30px;
+    background:#0b3d2e;
+    color:#fff;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="filter-buttons">
+
+<button onclick="filterSelection('all')">すべて</button>
+
+<button onclick="filterSelection('farm')">
+農業
+</button>
+
+<button onclick="filterSelection('it')">
+IT
+</button>
+
+</div>
+
 <header>
-    <h1>PHOTO ALBUM 1</h1>
+    <h1>R HILL FARM 農業事業アルバム</h1>
 </header>
 
-<section class="album1">
+<section class="album">
 
-    <img src="img/image/image1.jpg" alt="">
-    <img src="img/image/image2.jpg" alt="">
-    <img src="img/image/image3.jpg" alt="">
-    <img src="img/image/image4.jpg" alt="">
-    <img src="img/image/image5.jpg" alt="">
-    <img src="img/image/image6.jpg" alt="">
-    <img src="img/image/image7.jpg" alt="">
-    <img src="img/image/image8.jpg" alt="">
-    <img src="img/image/image9.jpg" alt="">
-    <img src="img/image/image10.jpg" alt="">
+    <div class="photo-card farm" onclick="openModal(0)">
+    	<img src="img/image_0/image0.jpg">
+    	<div class="photo-title">image0.jpg:仮コメント</div>
+	</div>
+	
+    <div class="photo-card farm" onclick="openModal(1)">
+    	<img src="img/image_0/image1.jpg">
+    	<div class="photo-title">image1,jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(2)">
+    	<img src="img/image_0/image2.jpg">
+    	<div class="photo-title">image2,jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(3)">
+    	<img src="img/image_0/image3.jpg">
+    	<div class="photo-title">>image3,jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(4)">
+    	<img src="img/image_0/image4.jpg">
+    	<div class="photo-title">image4.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(5)">
+    	<img src="img/image_0/image5.jpg">
+    	<div class="photo-title">image5.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(6)">
+    	<img src="img/image_0/image6.jpg">
+    	<div class="photo-title">image6.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(7)">
+    	<img src="img/image_0/image7.jpg">
+    	<div class="photo-title">仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(8)">
+    	<img src="img/image_0/image8.jpg">
+    	<div class="photo-title">image8.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(9)">
+    	<img src="img/image_0/image9.jpg">
+    	<div class="photo-title">image9.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(10)">
+    	<img src="img/image_0/image10.jpg">
+    	<div class="photo-title">image10.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(11)">
+    	<img src="img/image_0/image11.jpg">
+    	<div class="photo-title">image11.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(12)">
+    	<img src="img/image_0/image12.jpg">
+    	<div class="photo-title">image12.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(13)">
+    	<img src="img/image_0/image13.jpg">
+    	<div class="photo-title">image13.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(14)">
+    	<img src="img/image_0/image14.jpg">
+    	<div class="photo-title">image14.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(15)">
+    	<img src="img/image_0/image15.jpg">
+    	<div class="photo-title">image15.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(16)">
+    	<img src="img/image_0/image16.jpg">
+    	<div class="photo-title">image16.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(17)">
+    	<img src="img/image_0/image17.jpg">
+    	<div class="photo-title">image17.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(18)">
+    	<img src="img/image_0/image18.jpg">
+    	<div class="photo-title">image18.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(19)">
+    	<img src="img/image_0/image19.jpg">
+    	<div class="photo-title">image19.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(20)">
+    	<img src="img/image_0/image20.jpg">
+    	<div class="photo-title">image20.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(21)">
+    	<img src="img/image_0/image21.jpg">
+    	<div class="photo-title">image21.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(22)">
+    	<img src="img/image_0/image22.jpg">
+    	<div class="photo-title">image22.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(23)">
+    	<img src="img/image_0/image23.jpg">
+    	<div class="photo-title">image23.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(24)">
+    	<img src="img/image_0/image24.jpg">
+    	<div class="photo-title">image24.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(25)">
+    	<img src="img/image_0/image25.jpg">
+    	<div class="photo-title">image25.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(26)">
+    	<img src="img/image_0/image26.jpg">
+    	<div class="photo-title">image26.jp:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(27)">
+    	<img src="img/image_0/image27.jpg">
+    	<div class="photo-title">image27.jpg:仮コメント</div>
+	</div>
+
+    <div class="photo-card farm" onclick="openModal(28)">
+    	<img src="img/image_0/image28.jpg">
+    	<div class="photo-title">image28.jpg:仮コメント</div>
+	</div>
 
 </section>
 
@@ -55,7 +326,7 @@
     <h1>PHOTO ALBUM 2</h1>
 </header>
 
-<section class="album2">
+<section class="album">
 
     <img src="img/image_1/image1.jpg" alt="">
     <img src="img/image_1/image2.jpg" alt="">
@@ -74,7 +345,7 @@
     <h1>PHOTO ALBUM 3</h1>
 </header>
 
-<section class="album2">
+<section class="album">
 
     <img src="img/image_2/image1.jpg" alt="">
     <img src="img/image_2/image2.jpg" alt="">
@@ -94,7 +365,7 @@
     <h1>PHOTO ALBUM 4</h1>
 </header>
 
-<section class="album3">
+<section class="album">
 
     <img src="img/image_3/image1.jpg" alt="">
     <img src="img/image_3/image2.jpg" alt="">
@@ -103,6 +374,200 @@
 
 </section>
 
+<!-- モーダル -->
+<div class="modal" id="modal">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<div class="prev" onclick="changeSlide(-1)">❮</div>
+<div class="next" onclick="changeSlide(1)">❯</div>
+
+<img id="modal-img">
+<div class="modal-title" id="modal-title"></div>
+
+</div>
+
+<script>
+
+const images = [
+
+	{
+		src:"img/image_0/image0.jpg",title:"image0:仮コメント"
+	},
+	
+	{
+		src:"img/image_0/image1.jpg",title:"image1:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image2.jpg",title:"image2:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image3.jpg",title:"image3:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image4.jpg",title:"image4:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image5.jpg",title:"image5:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image7.jpg",title:"image7:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image8.jpg",title:"image8:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image9.jpg",title:"image9:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image10.jpg",title:"image10:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image11.jpg",title:"image11:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image12.jpg",title:"image12:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image13.jpg",title:"image13:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image14.jpg",title:"image14:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image15.jpg",title:"image15:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image16.jpg",title:"image16:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image17.jpg",title:"image17:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image18.jpg",title:"image18:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image19.jpg",title:"image19:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image20.jpg",title:"image20:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image21.jpg",title:"image21:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image22.jpg",title:"image22:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image23.jpg",title:"image23:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image24.jpg",title:"image24:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image25.jpg",title:"image25:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image26.jpg",title:"image26:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image27.jpg",title:"image27:仮コメント"
+	},
+
+	{
+		src:"img/image_0/image28.jpg",title:"image28:仮コメント"
+	}
+
+];
+
+let currentIndex = 0;
+
+function openModal(index){
+
+currentIndex = index;
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modal-img").src =
+images[index].src;
+
+document.getElementById("modal-title").innerText =
+images[index].title;
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+function changeSlide(direction){
+
+currentIndex += direction;
+
+if(currentIndex < 0){
+currentIndex = images.length -1;
+}
+
+if(currentIndex >= images.length){
+currentIndex = 0;
+}
+
+openModal(currentIndex);
+
+}
+
+/* カテゴリ */
+function filterSelection(category){
+
+const cards =
+document.querySelectorAll(".photo-card");
+
+cards.forEach(card=>{
+
+if(category==="all"){
+card.style.display="block";
+}
+
+else if(card.classList.contains(category)){
+card.style.display="block";
+}
+
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
