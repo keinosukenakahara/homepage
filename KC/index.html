@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Amigo de Puerto | 神戸のエスニック料理キッチンカー・ケータリング
+</title>
+
+<meta name="description"
+content="神戸を拠点に活動するエスニック料理キッチンカー Amigo de Puerto。パエリア・地中海料理・イベント出店・企業ケータリング対応。">
+
+<!-- SEO -->
+
+<meta name="keywords"
+content="エスニック料理,キッチンカー,ケータリング,スペイン料理,地中海料理,神戸キッチンカー,イベント出店,パエリア">
+
+<meta name="author"
+content="Amigo de Puerto">
+
+<meta name="robots"
+content="index, follow">
+
+<!-- OGP -->
+
+<meta property="og:title"
+content="Amigo de Puerto | エスニック料理キッチンカー">
+
+<meta property="og:description"
+content="スペイン・地中海風エスニック家庭料理をお届けするキッチンカー。イベント・ケータリングにも対応。">
+
+<meta property="og:image"
+content="img/header.jpg">
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:url"
+content="https://xxxxx.com">
+
+<!-- FAVICON -->
+
+<link rel="icon" href="img/favicon.png">
+
+<!-- FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+rel="stylesheet">
+
+
+
+
+
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Noto Sans JP',sans-serif;
+
+    background:
+    linear-gradient(rgba(255,250,244,.96),rgba(255,250,244,.96)),
+    url("img/tropical-contact.jpg") fixed center/cover;
+
+    color:#333;
+    line-height:1.8;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    position:relative;
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("img/header.jpg");
+
+    background-size:cover;
+    background-position:center right;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero{
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    text-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.hero p{
+    font-size:1.25rem;
+    max-width:700px;
+    margin:auto;
+    text-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+
+.hero a{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 38px;
+    background:#ff7b00;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:bold;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.hero a:hover{
+    background:#e16400;
+    transform:translateY(-3px);
+}
+
+/* ===== SECTION ===== */
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+    color:#c24d00;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:1.05rem;
+}
+
+/* ===== CONCEPT ===== */
+
+.concept{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.concept img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.concept-text{
+    font-size:1.08rem;
+}
+
+/* ===== MENU ===== */
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.menu-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+}
+
+.menu-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.menu-content{
+    padding:25px;
+}
+
+.menu-content h3{
+    color:#c24d00;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.menu-content ul{
+    padding-left:20px;
+    margin-bottom:15px;
+}
+
+/* ===== SCHEDULE ===== */
+
+.schedule{
+    background:rgba(255,255,255,.88);
+    border-radius:25px;
+    padding:45px;
+    text-align:center;
+    font-size:1.1rem;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    background:
+    linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.93)),
+    url("img/tropical-contact.jpg") center/cover;
+
+    padding:45px;
+    border-radius:25px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact-box p{
+    margin:15px 0;
+}
+
+/* ===== SERVICE MODERN ===== */
+
+.service-wrap{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.service-image img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+}
+
+.service-content{
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+
+    padding:50px;
+    border-radius:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.service-content h3{
+    font-size:2rem;
+    color:#c24d00;
+    margin-bottom:25px;
+}
+
+.service-content p{
+    margin-bottom:20px;
+}
+
+.service-content a{
+    display:inline-block;
+    margin-top:20px;
+    background:#ff7b00;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.service-content a:hover{
+    background:#d95f00;
+}
+
+/* ===== SCHEDULE MODERN ===== */
+
+.schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.schedule-card{
+    background:white;
+    border-radius:25px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.schedule-card:hover{
+    transform:translateY(-8px);
+}
+
+.schedule-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+
+    background:linear-gradient(90deg,#ff7b00,#ffb347);
+}
+
+.schedule-card span{
+    display:inline-block;
+
+    background:#fff1e3;
+
+    color:#d95f00;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+.schedule-card h3{
+    margin-bottom:10px;
+    color:#333;
+}
+
+/* ===== CONTACT MODERN ===== */
+
+.contact-modern{
+
+    background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+    url("img/tropical-contact.jpg") center/cover;
+
+    padding:70px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.contact-modern h3{
+    font-size:2rem;
+    color:#c24d00;
+    margin-bottom:20px;
+}
+
+.contact-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+}
+
+.contact-info div{
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(10px);
+
+    padding:30px;
+
+    border-radius:25px;
+}
+
+.contact-info h4{
+    color:#d95f00;
+    margin-bottom:10px;
+}
+
+/* ===== RESPONSIVE ADD ===== */
+
+@media(max-width:900px){
+
+    .service-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .service-content{
+        padding:35px;
+    }
+
+    .contact-modern{
+        padding:40px 25px;
+    }
+
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#2b1c12;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .concept{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 7%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="hero">
+
+<h1>
+神戸のエスニック料理キッチンカー<br>
+Amigo de Puerto
+
+</h1>
+
+<p>
+港町の香りと異国の風をのせて。<br>
+スペイン・地中海風エスニック家庭料理をお届けします。
+</p>
+
+<a href="#menu">MENUを見る</a>
+
+</div>
+
+</header>
+
+<!-- CONCEPT -->
+
+<section>
+
+<div class="section-title">
+<h2>CONCEPT</h2>
+<p>香りで旅する、エスニックキッチン。</p>
+</div>
+
+<div class="concept">
+
+<img src="img/concept.jpg" alt="南国キッチンカー">
+
+<div class="concept-text">
+
+<p>
+Amigo de Puerto（アミーゴ デ ポルト）は、
+スペイン・地中海を感じる家庭料理を
+キッチンカーでお届けするケータリングスタイルのお店です。
+</p>
+
+<br>
+
+<p>
+味だけではなく、
+季節の風に乗るスパイスの香りや、
+屋外で味わう異国感を大切にしています。
+</p>
+
+<br>
+
+<p>
+神戸の港町から、
+皆さまの街へ小さな旅気分をお届けします。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MENU -->
+
+<section id="menu">
+
+<div class="section-title">
+<h2>MENU</h2>
+<p>人気メニュー</p>
+</div>
+
+<div class="menu-grid">
+
+<!-- PAELLA -->
+
+<div class="menu-card">
+
+<img src="img/catering.jpg" alt="パエリア">
+
+<div class="menu-content">
+
+<h3>パエリア</h3>
+
+<ul>
+<li>ミックスパエリア</li>
+<li>イカスミのパエリア</li>
+</ul>
+
+<p>
+魚介や鶏肉の旨味をたっぷり吸い込んだ
+スペイン料理の王道です。
+</p>
+
+</div>
+</div>
+
+<!-- TAPAS -->
+
+<div class="menu-card">
+
+<img src="img/catering.jpg" alt="タパス">
+
+<div class="menu-content">
+
+<h3>タパス・前菜</h3>
+
+<ul>
+<li>ハモン・セラーノ</li>
+<li>スペイン風オムレツ</li>
+<li>タパス盛り合わせ</li>
+</ul>
+
+<p>
+ワインやビールとの相性抜群の
+小皿料理です。
+</p>
+
+</div>
+</div>
+
+<!-- MAIN -->
+
+<div class="menu-card">
+
+<img src="img/catering.jpg" alt="アヒージョ">
+
+<div class="menu-content">
+
+<h3>メイン料理</h3>
+
+<ul>
+<li>アヒージョ</li>
+<li>牛ホホ肉の煮込み</li>
+<li>チキングリル</li>
+</ul>
+
+<p>
+香り高いオイル料理と
+本格グリルメニュー。
+</p>
+
+</div>
+</div>
+
+<!-- BREAD -->
+
+<div class="menu-card">
+
+<img src="img/catering.jpg" alt="パン料理">
+
+<div class="menu-content">
+
+<h3>パン＆デザート</h3>
+
+<ul>
+<li>パン・コン・トマテ</li>
+<li>ボカディジョ</li>
+<li>トリーハス</li>
+</ul>
+
+<p>
+スペイン定番のパン料理と
+優しい甘さのデザート。
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICE -->
+
+<section class="service-section">
+
+<div class="section-title">
+<h2>SERVICE</h2>
+<p>人と料理をつなぐ、港町の時間。</p>
+</div>
+
+<div class="service-wrap">
+
+<div class="service-image">
+<img src="img/service.jpg" alt="接客風景">
+</div>
+
+<div class="service-content">
+
+<h3>海辺のリゾートのような時間を。</h3>
+
+<p>
+Amigo de Puertoでは、
+料理だけではなく、
+人との会話や空間も大切にしています。
+</p>
+
+<p>
+イベント・フェス・企業ケータリングなど、
+様々なシーンへ出店可能です。
+</p>
+
+<p>
+異国の風を感じる料理と、
+心地よい時間をお届けします。
+</p>
+
+<a href="#contact">お問い合わせはこちら</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- SCHEDULE -->
+
+<!-- SCHEDULE -->
+
+<section>
+
+<div class="section-title">
+<h2>SCHEDULE</h2>
+<p>出店スケジュール</p>
+</div>
+
+<div class="schedule-grid">
+
+<div class="schedule-card">
+<span>6/10</span>
+<h3>神戸メリケンパーク</h3>
+<p>11:00 - 18:00</p>
+</div>
+
+<div class="schedule-card">
+<span>6/15</span>
+<h3>西宮マルシェ</h3>
+<p>10:00 - 17:00</p>
+</div>
+
+<div class="schedule-card">
+<span>6/22</span>
+<h3>須磨海辺マーケット</h3>
+<p>11:00 - 19:00</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ORDER -->
+
+<section>
+
+<div class="section-title">
+<h2>ORDER & RESERVE</h2>
+<p>事前オーダー・ご予約</p>
+</div>
+
+<div class="contact-box">
+
+<p>
+事前オーダー・リザーブ受付準備中です。
+</p>
+
+<p>
+イベント・企業ケータリングのご相談も承ります。
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>CONTACT</h2>
+<p>お問い合わせ</p>
+</div>
+
+<div class="contact-modern">
+
+<h3>お気軽にお問い合わせください</h3>
+
+<p>
+イベント出店・企業ケータリング・
+貸切パーティーなども対応可能です。
+</p>
+
+<div class="contact-info">
+
+<div>
+<h4>TEL</h4>
+<p>080-XXXX-XXXX</p>
+</div>
+
+<div>
+<h4>MAIL</h4>
+<p>amigo@xxxxx.co.jp</p>
+</div>
+
+<div>
+<h4>OFFICE ADDRESS</h4>
+<p>神戸市長田区XXXXXXXX</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© Amigo de Puerto
+</p>
+
+</footer>
+
+</body>
+</html>
