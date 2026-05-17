@@ -2,9 +2,6 @@
 <html lang="ja">
 <head>
 
-
-<head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,19 +83,26 @@ body{
 
 header{
     position:relative;
-    height:100vh;
+
+    min-height:100vh;
 
     background:
     linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
     url("img/header.jpg");
 
-    background-size:cover;
-    background-position:center right;
+    background-size:contain;
+
+    background-repeat:no-repeat;
+
+    background-position:center center;
+
+    background-color:#1f1b17;
 
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
+
     color:white;
 }
 
@@ -439,6 +443,8 @@ footer{
 
 /* ===== RESPONSIVE ===== */
 
+/* ===== RESPONSIVE ===== */
+
 @media(max-width:900px){
 
     .hero h1{
@@ -457,8 +463,20 @@ footer{
         padding:70px 7%;
     }
 
-}
+    /* ヘッダー画像全体表示 */
 
+    header{
+
+        background-size:contain;
+
+        background-repeat:no-repeat;
+
+        background-position:center top;
+
+        background-color:#1f1b17;
+    }
+
+}
 </style>
 </head>
 
