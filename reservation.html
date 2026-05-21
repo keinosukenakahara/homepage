@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ご予約 | Amigo de Puerto</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#f8f8f8;
+}
+
+/* ボタン */
+
+.open-btn{
+    display:block;
+    margin:80px auto;
+    padding:18px 40px;
+    border:none;
+    border-radius:12px;
+    background:#d35400;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* モーダル */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:500px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:16px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* フォーム */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button.submit-btn{
+    background:#d35400;
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.notice{
+    font-size:13px;
+    color:#666;
+    line-height:1.6;
+}
+
+.complete{
+    display:none;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.complete h2{
+    color:#d35400;
+}
+
+@media(max-width:600px){
+
+.modal-content{
+    width:95%;
+    padding:20px;
+}
+
+input,
+select,
+textarea{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="open-btn" onclick="openModal()">
+WEB予約はこちら
+</button>
+
+<!-- モーダル -->
+
+<div id="reservationModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">
+&times;
+</span>
+
+<h2>ご予約フォーム</h2>
+
+<form id="reservationForm"
+      action="https://api.web3forms.com/submit"
+      method="POST">
+
+<!-- hidden追加 -->
+
+<input type="hidden"
+      name="access_key"
+      value="482eae9d-f24e-4108-9f66-df127804426c">
+
+<input type="hidden"
+       name="subject"
+       value="新しい予約が入りました">
+
+<input type="hidden"
+       name="from_name"
+       value="Amigo de Puerto">
+
+<input type="hidden"
+       name="redirect"
+       value="http://127.0.0.1:5500/thanks.html">
+
+<!-- 完了画面 -->
+
+<!-- 名前 -->
+
+<input type="text"
+       name="name"
+       placeholder="お名前"
+       required>
+
+<!-- メール -->
+
+<input type="email"
+       name="email"
+       placeholder="メールアドレス"
+       required>
+
+<!-- 人数 -->
+
+<select name="people" required>
+
+<option value="">
+人数を選択
+</option>
+
+<option>1名</option>
+<option>2名</option>
+<option>3名</option>
+<option>4名</option>
+<option>5名</option>
+<option>6名以上</option>
+
+</select>
+
+<!-- 日時 -->
+
+<input type="date"
+       id="reservationDate"
+       name="reservationDate"
+       required>
+
+
+
+
+<!-- 開始時間 -->
+
+<select id="startHour"
+        name="startHour"
+        required>
+
+<option value="">
+開始時間
+</option>
+
+<option value="11:00">11:00</option>
+<option value="11:30">11:30</option>
+<option value="12:00">12:00</option>
+<option value="12:30">12:30</option>
+<option value="13:00">13:00</option>
+<option value="13:30">13:30</option>
+<option value="14:00">14:00</option>
+<option value="14:30">14:30</option>
+<option value="15:00">15:00</option>
+<option value="15:30">15:30</option>
+<option value="16:00">16:00</option>
+<option value="16:30">16:30</option>
+<option value="17:00">17:00</option>
+<option value="17:30">17:30</option>
+<option value="18:00">18:00</option>
+<option value="18:30">18:30</option>
+<option value="19:00">19:00</option>
+<option value="19:30">19:30</option>
+<option value="20:00">20:00</option>
+<option value="20:30">20:30</option>
+<option value="21:00">21:00</option>
+
+</select>
+
+<!-- 終了時間 -->
+
+<select id="endHour"
+        name="endHour"
+        required>
+        
+<option value="">
+終了時間
+</option>
+
+<option value="12:00">12:00</option>
+<option value="12:30">12:30</option>
+<option value="13:00">13:00</option>
+<option value="13:30">13:30</option>
+<option value="14:00">14:00</option>
+<option value="14:30">14:30</option>
+<option value="15:00">15:00</option>
+<option value="15:30">15:30</option>
+<option value="16:00">16:00</option>
+<option value="16:30">16:30</option>
+<option value="17:00">17:00</option>
+<option value="17:30">17:30</option>
+<option value="18:00">18:00</option>
+<option value="18:30">18:30</option>
+<option value="19:00">19:00</option>
+<option value="19:30">19:30</option>
+<option value="20:00">20:00</option>
+<option value="20:30">20:30</option>
+<option value="21:00">21:00</option>
+<option value="21:30">21:30</option>
+<option value="22:00">22:00</option>
+
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden"
+       name="datetime"
+       id="datetime">
+
+<input type="text"
+       id="datetimeDisplay"
+       placeholder="予約日時"
+       readonly>
+
+
+
+<!-- 要望 -->
+
+<textarea name="message"
+          rows="4"
+          placeholder="ご要望・アレルギー等"></textarea>
+
+<p class="notice">
+
+※ 月曜日は定休日です。<br>
+※ 営業時間は 11:00〜22:00 です。<br>
+※ 満席の場合は折返しご連絡します。
+
+</p>
+
+<button type="submit"
+        class="submit-btn">
+予約する
+</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+
+/* モーダル */
+
+function openModal(){
+    document.getElementById("reservationModal").style.display="block";
+}
+
+function closeModal(){
+    document.getElementById("reservationModal").style.display="none";
+}
+
+/* 外クリック閉じ */
+
+window.onclick=function(event){
+
+const modal=document.getElementById("reservationModal");
+
+if(event.target==modal){
+    modal.style.display="none";
+}
+
+}
+
+
+/* 日時表示更新 */
+
+function updateDateTimeDisplay(){
+
+const date =
+document.getElementById("reservationDate").value;
+
+const start =
+document.getElementById("startHour").value;
+
+const end =
+document.getElementById("endHour").value;
+
+if(date && start && end){
+
+const datetimeValue =
+`${date} ${start} ～ ${end}`;
+
+document.getElementById("datetime").value =
+datetimeValue;
+
+document.getElementById("datetimeDisplay").value =
+datetimeValue;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* changeイベント */
+
+document.getElementById("reservationDate")
+.addEventListener("input", updateDateTimeDisplay);
+
+document.getElementById("startHour")
+.addEventListener("input", updateDateTimeDisplay);
+
+document.getElementById("endHour")
+.addEventListener("input", updateDateTimeDisplay);
+
+
+
+
+/* 営業時間制限 */
+
+document.querySelector("form")
+.addEventListener("submit",function(e){
+
+const date =
+document.getElementById("reservationDate").value;
+
+const start =
+document.getElementById("startHour").value;
+
+const end =
+document.getElementById("endHour").value;
+
+/* 未選択 */
+
+if(!date || !start || !end){
+
+alert("予約日時を選択してください");
+
+e.preventDefault();
+
+return;
+
+}
+
+/* 開始終了チェック */
+
+if(start >= end){
+
+alert("終了時間は開始時間より後にしてください");
+
+e.preventDefault();
+
+return;
+
+}
+
+const datetimeValue =
+`${date} ${start} ～ ${end}`;
+
+/* hidden */
+
+document.getElementById("datetime").value =
+datetimeValue;
+
+/* 表示用 */
+
+document.getElementById("datetimeDisplay").value =
+datetimeValue;
+
+/* 月曜定休 */
+
+const selected = new Date(date);
+
+if(selected.getDay() === 1){
+
+alert("月曜日は定休日です");
+
+e.preventDefault();
+
+return;
+
+}
+
+});
+
+if(start >= end){
+
+alert("終了時間は開始時間より後にしてください");
+
+e.preventDefault();
+
+return;
+
+}
+
+
+
+</script>
+
+</body>
+</html>
