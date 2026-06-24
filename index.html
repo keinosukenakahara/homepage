@@ -1,437 +1,946 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>株式会社R HILL FARM｜ITアウトソーシング・農業事業</title>
-
-<meta name="description" content="ITアウトソーシングと農業事業を展開。キッティング・インフラ・現地作業まで対応。エンジニア採用強化中。">
+<title>飲み処 貫</title>
 
 <style>
-:root{
-  --main:#0b3d2e;
-  --accent:#c8a96a;
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    line-height: 1.7;
+    background: #fafafa;
+    color: #000;
 }
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#f7f7f7;
-  color:#222;
-}
-
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:120px 20px;
-  background:linear-gradient(135deg,#06281d,#0b3d2e);
-  color:#fff;
-}
-
-.logo-img{
-  width:800px;
-  max-width:95%;
-}
-
-.catch{
-  font-size:36px;
-  font-weight:700;
-  margin-top:30px;
-}
-
-.subcatch{
-  margin-top:10px;
-  color:#d1d5db;
-}
-
-/* 数字 */
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:40px;
-  flex-wrap:wrap;
-}
-
-.stat{
-  text-align:center;
-}
-
-.stat-num{
-  font-size:32px;
-  font-weight:700;
-  color:#fff;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 34px;
-  border-radius:30px;
-  background:var(--accent);
-  color:#fff;
-  text-decoration:none;
-}
-
-/* SECTION */
-.section{
-  max-width:1100px;
-  margin:80px auto;
-  padding:0 20px;
-}
-
-.section h2{
-  border-left:5px solid var(--main);
-  padding-left:10px;
-  margin-bottom:30px;
-}
-
-/* GRID */
-.grid{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.card{
-  flex:1;
-  min-width:260px;
-  background:#fff;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* VOICE */
-.voice{
-  background:#fff;
-  padding:25px;
-  border-radius:15px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* FLOW */
-.flow-step{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-/* CTA */
-.cta{
-  background:#06281d;
-  color:#fff;
-  text-align:center;
-  padding:80px 20px;
-}
-
-footer{
-  text-align:center;
-  padding:40px;
-  background:#06281d;
-  color:#fff;
-}
-
-@media(max-width:768px){
-  .grid{flex-direction:column}
-}
-
-/* CONTACT FORM */
-.contact-form{
-  max-width:600px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:14px;
-  border-radius:8px;
-  border:1px solid #ccc;
-  font-size:16px;
-}
-
-/* 高さ調整 */
-.contact-form input{
-  height:50px;
-}
-
-.contact-form textarea{
-  height:180px;
-  resize:vertical;
-}
-
-/* ボタン最下部＆中央 */
-.submit-btn{
-  margin-top:10px;
-  align-self:center;
-}
-
-/* CSS */
-.album-button {
+/* ヘッダー */
+header {
+    background: #111;
+    color: #fff;
     text-align: center;
-    margin: 40px 0;
+    padding: 15px;
 }
 
-.album-button a {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #333;
-    color: white;
-    text-decoration: none;
+h1 { margin: 0; font-size: 22px; }
+
+/* セクション */
+section {
+    padding: 20px 15px;
+}
+
+/* 画像 */
+img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
 }
 
-.album-button a:hover {
-    background: #555;
-    transform: scale(1.05);
+/* 🔥 メニュー横並び（重要） */
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-item {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-item p {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* スマホは縦 */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+}
+
+/* 店舗情報 */
+.info p {
+    margin: 5px 0;
+}
+
+/* 予約ボタン */
+.reserve-btn {
+    display: inline-block;
+    padding: 16px 30px;
+    background: #e60033;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* 残席 */
+.seat-info {
+    text-align: center;
+    color: #e60033;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* 固定予約ボタン */
+.fixed-reserve {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    padding: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, #06C755, #00b900);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+/* 電話ボタン */
+.tel-btn {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    padding: 14px;
+    background: #333;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.6);
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    width: 85%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+
+/* 予約フォーム */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+}
+
+form input,
+form select,
+form textarea{
+
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+    width:100%;
+}
+
+form button{
+    cursor:pointer;
+}
+
+form button{
+    cursor:pointer;
+}
+
+/* 定休日 */
+
+.flatpickr-day.closed-day{
+    background:#ffebeb;
+    color:red;
+    border:1px solid red;
+}
+
+/* 満席 */
+
+.flatpickr-day.full-day{
+    background:#ddd;
+    color:#666;
+    border:1px solid #999;
+}
+
+/* 選択不可 */
+
+.flatpickr-day.disabled{
+    opacity:0.4;
 }
 
 </style>
+
+</style>
+
+<!-- Flatpickr -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 </head>
 
 <body>
 
-<!-- アルバムボタン -->
-<div class="album-button">
-    <a href="album.html">R HILL FARM 業務風景アルバムはこちら</a>
-</div>
+<header>
+<h1>飲み処 貫</h1>
+</header>
 
-
-
-<!-- HERO -->
-<section class="hero">
-<img src="img/logo.png" class="logo-img">
-
-<div class="catch">技術と農業で、未来をつくる</div>
-<div class="subcatch">ITアウトソーシング × 農業のハイブリッド企業</div>
-
-<div class="stats">
-<div class="stat">
-<div class="stat-num">10,200台</div>
-<div>キッティング実績</div>
-</div>
-
-<div class="stat">
-<div class="stat-num">840台</div>
-<div>DAP取付</div>
-</div>
-
-<div class="stat">
-<div class="stat-num">全国対応</div>
-<div>エリア</div>
-</div>
-</div>
-
-<a href="#contact" class="btn">応募する</a>
+<section>
+<img src="img/header.jpg">
 </section>
 
-<!-- 会社概要 -->
-<section class="section">
-<h2>会社概要</h2>
-<ul>
-
-<li>会社名：株式会社R HILL FARM（カブシキカイシャ　アールヒルファーム）</li>
-<li>住所　：〒5800032
-　　　　　　大阪府松原市天美東２丁目１３６番地の３（１１０３号）</li>
-<li>設立　：2025年5月23日</li>
-<li>代表　：河部遼（カワベリョウ）</li>
-<li>資本金：100万</li>
-<li>従業員：25名（契約社員含）</li>
-<ul>
+<section>
+<h2>店内のご案内</h2>
+<img src="img/counter.jpg">
+<p>木の温もりに包まれたカウンターで、静かなひとときを。</p>
 </section>
 
-<!-- 営業：サービス -->
-<section class="section">
-<h2>サービス内容</h2>
-<div class="grid">
+<section class="info">
+<h2>店舗情報</h2>
+<p>神戸市兵庫区XXXXXXXXXX</p>
+<p>19:00〜24:00（日曜定休）</p>
+<p>カウンター10席</p>
 
-<div class="card">
-<h3>ITアウトソーシング</h3>
-<p>キッティング・インフラ構築・現地作業まで一括対応</p>
-<p>サーバープラットホーム、UPS、外部メディアセットアップ・動作確認</p>
-</div>
+<iframe src="https://www.google.com/maps?q=神戸市兵庫区&output=embed"
+width="100%" height="250"></iframe>
+</section>
 
-<div class="card">
-<h3>ネットワーク工事</h3>
-<p>構内LAN・通信設備の設計・施工</p>
-<p>LANケーブル線端加工・配線工事</p>
-<p>L2/L3スイッチセットアッププロトコル疎通確認</p>
-
-</div>
-
-<div class="card">
-<h3>農業事業</h3>
-<p>大阪府南河内郡太子町に1.2haの自社農地で高付加価値農産物を生産</p>
-
-<!--
-
-<p>他の農業法人と協業し「二拠点農業」に取り組む</p>
-    <button onclick="location.href='article.html'" class="btn">
-        二拠点農業記事
-    </button>
--->
-
-</div>
-
+<section>
+<h2>お品書き</h2>
+<div class="menu">
+<div class="menu-item"><img src="img/sashimi.jpg" id="sashimi"><p>旬の魚料理</p></div>
+<div class="menu-item"><img src="img/salad.jpg" id="salad"><p>和風サラダ</p></div>
+<div class="menu-item"><img src="img/yakitori.jpg" id="yakitori"><p>焼き鳥</p></div>
 </div>
 </section>
 
-<!-- 信頼 -->
-<section class="section">
-<h2>取引先企業</h2>
-<ul>
-<li>株式会社寺岡精工</li>
-<li>東京海上日動火災保険株式会社</li>
-<li>株式会社SS電気</li>
-<li>株式会社ダイナオール</li>
-<li>株式会社フリートライ</li>
-
-</ul>
-</section>
-
-<!-- 導入事例 -->
-<section class="section">
-<h2>導入事例</h2>
-<div class="grid">
-
-<div class="card">
-<h3>東京海上日動</h3>
-<p>DAPドライブレコーダー取付</p>
-</div>
-
-<div class="card">
-<h3>寺岡精工</h3>
-<p>POSレジ導入</p>
-</div>
-
-<div class="card">
-<h3>通信業者</h3>
-<p>LAN工事</p>
-</div>
-
+<section>
+<h2>お飲み物</h2>
+<div class="menu">
+<div class="menu-item"><img src="img/sake.jpg" id="sake"><p>日本酒</p></div>
+<div class="menu-item"><img src="img/whisky.jpg" id="whisky"><p>ウイスキー</p></div>
+<div class="menu-item"><img src="img/beer.jpg" id="beer"><p>ビール</p></div>
 </div>
 </section>
 
-<!-- 採用：メリット -->
-<section class="section">
-<h2>働くメリット</h2>
-<div class="grid">
+<section>
+<h2>ご予約</h2>
 
-<div class="card">
-<h3>自由な働き方</h3>
-<p>案件・時間を自分で選べる</p>
-</div>
-
-<div class="card">
-<h3>未経験OK</h3>
-<p>現場でスキルが身につく</p>
-</div>
-
-<div class="card">
-<h3>安心サポート</h3>
-<p>リアルタイムで本社支援</p>
-</div>
-
-</div>
-</section>
-
-<!-- 1日の流れ -->
-<section class="section">
-<h2>1日の流れ（例）</h2>
-
-<div class="flow-step">① 案件確認・スケジュール調整</div>
-<div class="flow-step">② 現場訪問・作業実施</div>
-<div class="flow-step">③ 作業報告（スマホ）</div>
-<div class="flow-step">④ 終了・次案件へ</div>
-
-</section>
-
-<!-- スタッフ紹介 -->
-<section class="section">
-<h2>スタッフ紹介</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>代表</h3>
-<p>
-元警視庁機動隊。渡米しヘリ操縦(固定翼機・回転翼機）免許取得。陸海空全て操縦経験有。<br><br>
-航空機整備会社勤務を経て株式会社 R HILL FARMを起業。<br><br>
-現在は会社経営と並行し、建設重機・大型車両の操縦や現場作業にも従事。
+<p class="seat-info">
+本日 残り <span id="seats">3</span>席
 </p>
-</div>
 
-<div class="card">
-<h3>総務・現場技術担当</h3>
-<p>
-元大手自動車メーカー生産技術社員。<br>
-IT・農業技術者を目指しR HILL FARMへ転職。<br><br>
-社内業務から各現場の設置工事まで幅広く担当。
-</p>
-</div>
+<div style="text-align:center;">
+<a href="#" onclick="openReservation()" class="reserve-btn">
+ご予約はこちら
+</a>
 
-<div class="card">
-<h3>技術顧問</h3>
-<p>
-元電機メーカー組み込み技術者。<br>
-現在は作家活動と並行し、株式会社R HILL FARMにて技術者育成および社内システム構築を担当。
-</p>
-</div>
-
-</div>
-</section>
-
-<!-- 社員の声 -->
-<section class="section">
-<h2>社員の声</h2>
-
-<div class="voice">
-自由にスケジュールを組めるので働きやすい。サポートも手厚く安心。
-</div>
-
-<div class="voice">
-チーム作業で未経験でも安心。人間関係も良い。
-</div>
-
-<div class="voice">
-農業は新しい挑戦。達成感が大きい。
+<a href="tel:09012345678" class="tel-btn">
+📞 電話予約する
+</a>
 </div>
 
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<h2>応募・営業窓口フォーム</h2>
-<h2>まずはお気軽にご応募・連絡ください。R HILL FARMは常に事業仲間を求めています</h2>
-<p>未経験者歓迎します
-<p>副業として弊社業務に興味のある方、柔軟に隙間時間の活用したい方歓迎します</p>
-<p>IT農業技術者・農業技術者・SE/プログラマ（分野問いません）・営業職・事務職の方歓迎します</p>
-<p>弊社との協業・営業目的の方是非ご連絡下さい</p>
 
 
-<form>
-<input type="text" placeholder="お名前" required style="width:100%;padding:10px;margin-bottom:10px">
-<input type="email" placeholder="メールアドレス" required style="width:100%;padding:10px;margin-bottom:10px">
-<textarea placeholder="ご質問・自己PR・ご用件" style="width:100%;padding:10px;margin-bottom:10px"></textarea>
-<button class="btn" type="submit">送信する</button>
+
+
+
+<!-- 予約モーダル -->
+
+<div id="reservationModal" class="modal">
+
+<div class="modal-content">
+
+<span id="reservationClose">&times;</span>
+
+<h2>WEB予約</h2>
+
+<form
+action="https://api.web3forms.com/submit"
+method="POST">
+
+
+<input type="hidden"
+name="access_key"
+value="482eae9d-f24e-4108-9f66-df127804426c">
+
+<input type="hidden"
+name="subject"
+value="飲み処 貫 予約通知">
+
+<input type="hidden"
+name="from_name"
+value="飲み処 貫">
+
+<input type="hidden"
+name="redirect"
+value="http://127.0.0.1:5500/thanks.html">
+
+
+
+
+
+
+<input type="text"
+name="name"
+placeholder="お名前"
+required>
+
+<input type="email"
+name="email"
+placeholder="メールアドレス"
+required>
+
+<select name="people" required>
+
+<option value="">人数を選択</option>
+
+<option>1名</option>
+<option>2名</option>
+<option>3名</option>
+<option>4名</option>
+<option>5名以上</option>
+
+</select>
+
+<!-- 日付 -->
+
+<input type="text"
+       id="reservationDate"
+       name="reservationDate"
+       placeholder="予約日を選択"
+       required>
+
+<!-- 時間 -->
+
+<!-- 開始時間 -->
+
+<select id="startHour"
+        name="startHour"
+        required>
+
+<option value="">開始時間</option>
+</select>
+
+
+<!-- 終了時間 -->
+
+<select id="endHour"
+        name="endHour"
+        required>
+        
+<option value="">終了時間</option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- hidden -->
+
+<input type="hidden"
+       name="datetime"
+       id="datetime">
+
+<!-- 表示用 -->
+
+<input type="text"
+       id="datetimeDisplay"
+       placeholder="予約日時"
+       readonly>
+       
+       
+<textarea
+name="message"
+rows="4"
+placeholder="ご要望など"></textarea>
+
+<button type="submit"
+class="reserve-btn"
+style="border:none; margin-top:15px;">
+予約送信
+</button>
+
 </form>
-</section>
 
-<footer>© 株式会社R HILL FARM</footer>
+<p style="font-size:13px; color:#666; margin-top:15px;">
+
+※ 日曜定休<br>
+※ 営業時間 19:00〜24:00
+
+</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<footer style="text-align:center; padding:20px;">
+© 飲み処 貫
+</footer>
+
+<a href="#" onclick="openReservation()" class="fixed-reserve">
+📅 今すぐ予約
+</a>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span id="close">&times;</span>
+<h2 id="menu-title"></h2>
+<p id="menu-detail"></p>
+</div>
+</div>
+
+<script>
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxMcX4qUGI2SLx7jIYsW1anY2K7wSgqr3DayOnhmj8CMIT0IbE7cyo22NQBQEha84Y/exec";
+
+let calendarData = [];
+
+document.getElementById("seats").textContent =
+Math.floor(Math.random() * 5) + 1;
+
+const modal = document.getElementById("modal");
+const title = document.getElementById("menu-title");
+const detail = document.getElementById("menu-detail");
+
+const data = {
+sashimi: {title:"刺身盛り",detail:"厳選鮮魚",price:"1280円"},
+salad: {title:"豆腐サラダ",detail:"自家製",price:"680円"},
+yakitori: {title:"焼き鳥",detail:"炭火",price:"980円"},
+sake: {title:"日本酒",detail:"地酒",price:"600円〜"},
+whisky: {title:"ウイスキー",detail:"国産中心",price:"700円〜"},
+beer: {title:"生ビール",detail:"キリン",price:"550円"}
+};
+
+document.querySelectorAll(".menu-item img").forEach(img=>{
+img.onclick=()=>{
+let d=data[img.id];
+title.textContent=d.title;
+detail.innerHTML=d.detail+"<br><strong>"+d.price+"</strong>";
+modal.style.display="block";
+};
+});
+
+
+async function loadCalendar(){
+
+    try{
+
+        const response =
+        await fetch(API_URL);
+
+        calendarData =
+        await response.json();
+
+        console.log(calendarData);
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("営業データ取得失敗");
+
+    }
+
+}
+
+window.addEventListener("load", async ()=>{
+
+    await loadCalendar();
+
+    /* Flatpickr生成 */
+
+    flatpickr("#reservationDate", {
+
+        dateFormat: "Y-m-d",
+
+        minDate: "today",
+
+        disable: [
+
+            function(date){
+
+                return false;
+
+            }
+
+        ],
+
+        onDayCreate: function(dObj, dStr, fp, dayElem){
+
+            const date =
+            dayElem.dateObj;
+
+            const yyyy =
+            date.getFullYear();
+
+            const mm =
+            String(date.getMonth()+1)
+            .padStart(2,"0");
+
+            const dd =
+            String(date.getDate())
+            .padStart(2,"0");
+
+            const formatted =
+            `${yyyy}-${mm}-${dd}`;
+
+            const dayData =
+            calendarData.find(d => {
+
+                const sheet =
+                new Date(d.date);
+
+                const sy =
+                sheet.getFullYear();
+
+                const sm =
+                String(sheet.getMonth()+1)
+                .padStart(2,"0");
+
+                const sd =
+                String(sheet.getDate())
+                .padStart(2,"0");
+
+                return `${sy}-${sm}-${sd}`
+                === formatted;
+
+            });
+
+            if(!dayData) return;
+
+            /* 休業日 */
+
+            if(dayData.open == false){
+
+                dayElem.classList
+                .add("closed-day");
+
+            }
+
+            /* 満席 */
+
+            if(dayData.status == "full"){
+
+                dayElem.classList
+                .add("full-day");
+
+            }
+
+        }
+
+    });
+
+});
+
+document.getElementById("close").onclick=()=>modal.style.display="none";
+window.onclick=e=>{
+
+
+	if(e.target==modal){
+	modal.style.display="none";
+	}
+
+	if(e.target==reservationModal){
+
+	reservationModal.style.display="none";
+
+	/* 固定ボタン再表示 */
+
+	document.querySelector(".fixed-reserve")
+	.style.display="block";
+
+	}
+
+};
+
+
+
+
+
+/* 予約モーダル */
+
+const reservationModal =
+document.getElementById("reservationModal");
+
+function openReservation(){
+
+	reservationModal.style.display="block";
+
+	/* 固定ボタン非表示 */
+
+	document.querySelector(".fixed-reserve")
+	.style.display="none";
+
+}
+
+document.getElementById("reservationClose").onclick=()=>{
+
+	reservationModal.style.display="none";
+
+	/* 固定ボタン再表示 */
+
+	document.querySelector(".fixed-reserve")
+	.style.display="block";
+
+};
+
+/* 営業時間制限 */
+
+const reservationDate =
+document.getElementById("reservationDate");
+
+
+
+
+
+
+reservationDate.addEventListener("change", function(){
+
+    const selectedDate = this.value;
+
+    if(!selectedDate) return;
+
+    const selected =
+    new Date(selectedDate);
+
+    const day =
+    selected.getDay();
+
+
+    /* スプレッド検索 */
+
+    console.log("selectedDate", selectedDate);
+    console.log("calendarData", calendarData);
+
+    const dayData =
+
+    calendarData.find(d => {
+
+    const sheetDate =
+    new Date(d.date);
+
+    const yyyy =
+    sheetDate.getFullYear();
+
+    const mm =
+    String(sheetDate.getMonth()+1)
+    .padStart(2,"0");
+
+    const dd =
+    String(sheetDate.getDate())
+    .padStart(2,"0");
+
+    const formatted =
+    `${yyyy}-${mm}-${dd}`;
+
+    return formatted === selectedDate;
+
+    });
+
+    console.log("dayData", dayData);
+
+    if(!dayData){
+
+        alert("営業情報がありません");
+
+        this.value = "";
+
+        return;
+    }
+
+    /* 店休日 */
+
+    if(dayData.open == false){
+
+        alert("休業日です");
+
+        this.value = "";
+
+        return;
+    }
+
+    /* 満席 */
+
+    if(dayData.status == "full"){
+
+        alert("満席です");
+
+        this.value = "";
+
+        return;
+    }
+
+    /* 営業時間生成 */
+
+    createTimeOptions(
+        dayData.start,
+        dayData.end
+    );
+
+});
+
+
+
+
+
+
+
+
+
+
+
+/* 過去日禁止 */
+
+const today = new Date();
+
+today.setMinutes(
+today.getMinutes() - today.getTimezoneOffset()
+);
+
+document.getElementById("reservationDate").min =
+today.toISOString().split("T")[0];
+
+/* submit時 */
+
+document.querySelector("form")
+.addEventListener("submit",function(e){
+
+const date =
+document.getElementById("reservationDate").value;
+
+const start =
+document.getElementById("startHour").value;
+
+const end =
+document.getElementById("endHour").value;
+
+/* 未選択 */
+
+if(!date || !start || !end){
+
+alert("予約日時を選択してください");
+
+e.preventDefault();
+
+return;
+
+}
+
+/* 開始・終了チェック */
+
+if(start >= end){
+
+alert("終了時間は開始時間より後にしてください");
+
+e.preventDefault();
+
+return;
+
+}
+
+/* hiddenへ格納 */
+
+document.getElementById("datetime").value =
+`${date} ${start} ～ ${end}`;
+
+/* 日曜チェック */
+
+const selected = new Date(date);
+
+
+});
+
+
+
+
+function createTimeOptions(start, end){
+
+    const startSelect =
+    document.getElementById("startHour");
+
+    const endSelect =
+    document.getElementById("endHour");
+
+    startSelect.innerHTML =
+    '<option value="">開始時間</option>';
+
+    endSelect.innerHTML =
+    '<option value="">終了時間</option>';
+
+    /* 文字列化 */
+
+    start = String(start).substring(0,5);
+    end = String(end).substring(0,5);
+
+    console.log(start, end);
+
+    let startHour =
+    parseInt(start.split(":")[0]);
+
+    let endHour =
+    parseInt(end.split(":")[0]);
+
+    /* 24:00対策 */
+
+    if(endHour === 24){
+        endHour = 23;
+    }
+
+    for(let h = startHour; h <= endHour; h++){
+
+        for(let m of ["00","30"]){
+
+            /* 23:30で終了 */
+
+            if(h === 23 && m === "30"){
+                continue;
+            }
+
+            const time =
+            `${String(h).padStart(2,"0")}:${m}`;
+
+            const startOption =
+            document.createElement("option");
+
+            startOption.value = time;
+            startOption.textContent = time;
+
+            startSelect.appendChild(startOption);
+
+            const endOption =
+            document.createElement("option");
+
+            endOption.value = time;
+            endOption.textContent = time;
+
+            endSelect.appendChild(endOption);
+
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+/* 日時表示更新 */
+
+function updateDateTimeDisplay(){
+
+const date =
+document.getElementById("reservationDate").value;
+
+const start =
+document.getElementById("startHour").value;
+
+const end =
+document.getElementById("endHour").value;
+
+if(date && start && end){
+
+const datetimeValue =
+`${date} ${start} ～ ${end}`;
+
+document.getElementById("datetime").value =
+datetimeValue;
+
+document.getElementById("datetimeDisplay").value =
+datetimeValue;
+
+}
+
+}
+
+
+
+/* イベント */
+
+document.getElementById("reservationDate")
+.addEventListener("change", updateDateTimeDisplay);
+
+document.getElementById("startHour")
+.addEventListener("change", updateDateTimeDisplay);
+
+document.getElementById("endHour")
+.addEventListener("change", updateDateTimeDisplay);
+
+
+
+
+
+</script>
 
 </body>
 </html>
