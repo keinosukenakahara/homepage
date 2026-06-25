@@ -423,12 +423,49 @@ IT・農業技術者を目指しR HILL FARMへ転職。<br><br>
 <p>弊社との協業・営業目的の方是非ご連絡下さい</p>
 
 
+
+
+
+<!--
+
 <form>
 <input type="text" placeholder="お名前" required style="width:100%;padding:10px;margin-bottom:10px">
 <input type="email" placeholder="メールアドレス" required style="width:100%;padding:10px;margin-bottom:10px">
 <textarea placeholder="ご質問・自己PR・ご用件" style="width:100%;padding:10px;margin-bottom:10px"></textarea>
 <button class="btn" type="submit">送信する</button>
 </form>
+
+
+
+<form action="send.php" method="post">
+<input type="text" placeholder="お名前" required style="width:100%;padding:10px;margin-bottom:10px">
+<input type="email" placeholder="メールアドレス" required style="width:100%;padding:10px;margin-bottom:10px">
+<textarea placeholder="ご質問・自己PR・ご用件" style="width:100%;padding:10px;margin-bottom:10px"></textarea>
+<button class="btn" type="submit">送信する</button>
+</form>
+
+-->
+
+
+<form action="send.php" method="post">
+<input type="text" name="name" placeholder="お名前" required
+style="width:100%;padding:10px;margin-bottom:10px">
+<input type="email" name="email" placeholder="メールアドレス" required
+style="width:100%;padding:10px;margin-bottom:10px">
+<textarea name="message" placeholder="ご質問・自己PR・ご用件" required
+style="width:100%;padding:10px;margin-bottom:10px"></textarea>
+<button class="btn" type="submit">送信する</button>
+</form>
+
+
+
+
+
+
+
+
+
+
 </section>
 
 <footer>© 株式会社R HILL FARM</footer>
