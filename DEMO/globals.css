@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1e40af;
+  --primary-light: #dbeafe;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #dc2626;
+  --gray: #6b7280;
+}
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+
+/* 手配グリッド */
+.arrangement-grid {
+  overflow-x: auto;
+}
+.arrangement-grid table {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+.arrangement-grid th,
+.arrangement-grid td {
+  border: 1px solid #e2e8f0;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.arrangement-grid th {
+  background-color: #1e40af;
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.arrangement-grid td.staff-name {
+  background-color: #f8fafc;
+  font-weight: 500;
+  text-align: left;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  min-width: 120px;
+  border-right: 2px solid #94a3b8;
+}
+.arrangement-grid td.arranged {
+  background-color: #bfdbfe;
+  cursor: pointer;
+}
+.arrangement-grid td.confirmed {
+  background-color: #bbf7d0;
+  cursor: pointer;
+}
+.arrangement-grid td.holiday {
+  background-color: #fef3c7;
+}
+.arrangement-grid td.empty {
+  cursor: pointer;
+}
+.arrangement-grid td.empty:hover {
+  background-color: #eff6ff;
+}
